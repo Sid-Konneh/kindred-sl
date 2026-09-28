@@ -1,0 +1,73 @@
+headersOrigin = "config"
+plugins = []
+redirects = []
+
+[functions]
+
+  [functions."*"]
+
+[build]
+publish = "C:\\Users\\user1\\kindred\\public"
+publishOrigin = "config"
+
+  [build.environment]
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[[headers]]
+for = "/*"
+
+  [headers.values]
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "DENY"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  Permissions-Policy = "geolocation=(), camera=(), microphone=()"
+  Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+[[headers]]
+for = "/app/sw.js"
+
+  [headers.values]
+  Cache-Control = "no-cache"
+
+[[headers]]
+for = "/app/config.js"
+
+  [headers.values]
+  Cache-Control = "no-cache"
+
+[[headers]]
+for = "/icons/*"
+
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+[[headers]]
+for = "/download/*"
+
+  [headers.values]
+  Content-Type = "application/vnd.android.package-archive"
+  Content-Disposition = "attachment; filename=Kindred.apk"
+
+[[headers]]
+for = "/sw.js"
+
+  [headers.values]
+  Cache-Control = "no-cache"
+
+[[headers]]
+for = "/admin/*"
+
+  [headers.values]
+  X-Robots-Tag = "noindex, nofollow"
+  Cache-Control = "no-cache"
